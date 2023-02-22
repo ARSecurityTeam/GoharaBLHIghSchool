@@ -1,0 +1,55 @@
+[
+    {
+        "roll": "1",
+        "name": "Romeo Murmu",
+        "subject_bangla": "Bangla",
+        "subject_english": "English",
+        "subject_math": "Math",
+        "subject_science": "Science",
+        "subject_agriculture": "Agriculture",
+        "subject_ict": "ICT",
+        "bangla": "65",
+        "english": "50",
+        "math": "55",
+        "agriculture": "60",
+        "science": "70",
+        "ict": "50",
+        "total": "180"
+    },
+    {
+        "roll": "2",
+        "name": "Sujon Mardi",
+        "subject_bangla": "Bangla",
+        "subject_english": "English",
+        "subject_math": "Math",
+        "subject_science": "Science",
+        "subject_agriculture": "Agriculture",
+        "subject_ict": "ICT",
+        "bangla": "65",
+        "english": "50",
+        "math": "55",
+        "agriculture": "60",
+        "science": "70",
+        "ict": "50",
+        "total": "180"
+    },
+    {
+        "roll": "3",
+        "name": "Elio Hasda",
+        "subject_bangla": "Bangla",
+        "subject_english": "English",
+        "subject_math": "Math",
+        "subject_science": "Science",
+        "subject_agriculture": "Agriculture",
+        "subject_ict": "ICT",
+        "bangla": "65",
+        "english": "50",
+        "math": "55",
+        "agriculture": "60",
+        "science": "70",
+        "ict": "50",
+        "total": "180"
+    }
+]
+
+  

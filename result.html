@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.scss">
+    <link rel="stylesheet" href="css/result.css">
+    <style type="text/css">
+  </style>
+  </head>
+  <body>
+  <section class="top-nav">
+    <div>
+      Gohara B.L High School
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <li><a href="index.html">Home page</a></li>
+      <li><a href="admission.html">Admission</a></li>
+      <li><a href="#" style="color:rgb(3, 255, 255);">Result</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Home</a></li>
+    </ul>
+  </section>
+<h2>Result Page</h2>
+<form id="resultForm">
+    <label for="rollNumber">Class Roll Number:</label>
+    <input type="text" id="rollNumber" name="rollNumber">
+    <br>
+    <label for="classSelection">Class:</label>
+    <select id="classSelection" name="classSelection">
+      <option value="class-6">Class 6</option>
+      <option value="class-7">Class 7</option>
+      <option value="class-8">Class 8</option>
+      <option value="class-9">Class 9</option>
+      <option value="class-10">Class 10</option>
+    </select>
+    <br>
+    <input type="button" value="Submit" onclick="getResult()">
+  </form>
+  
+  <div id="result"></div>
+  
+  <script>
+function getResult() {
+    // Get the selected class
+    var classSelection = document.getElementById("classSelection").value;
+    var rollNumber = document.getElementById("rollNumber").value;
+  
+    // Use fetch API to read the JSON file
+    fetch(classSelection + ".json")
+      .then(response => {
+        if(response.ok){
+          return response.json();
+        }else{
+          throw new Error("Error in fetching data")
+        }
+      })
+      .then(data => {
+        // Find the student with the matching roll number
+        var student = data.find(student => student.roll == rollNumber);
+        if(student){
+          // If a student is found, display their information
+          var result = "<table><tr><th>Name</th><th>Subject</th><th>Marks</th><th>Total</th></tr><tr><td rowspan="+6+">" + student.name + "</td><td>" + student.subject_bangla + "</td><td>" + student.bangla + "</td><td rowspan="+6+">" + student.total + "</td></tr><tr><td>" + student.subject_english + "</td><td>" + student.english + "</td></tr><tr><td>" + student.subject_math + "</td><td>" + student.math + "</td></tr><tr><td>" + student.subject_science + "</td><td>" + student.science + "</td></tr><tr><td>" + student.subject_agriculture + "</td><td>" + student.agriculture + "</td></tr><tr><td>" + student.subject_ict + "</td><td>" + student.ict + "</td></tr></table>";
+          document.getElementById("result").innerHTML = result;
+        }else{
+          alert("No student found with roll number "+ rollNumber)
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert(error.message);
+      });
+  }
+
+  </script>
+  <p class="cmt">copyright by GoharaBLHighSchool</p>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.scss">
+    <link rel="stylesheet" href="css/admission.css">
+  </head>
+  <body>
+  <section class="top-nav">
+    <div>
+      Gohara B.L High School
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <li><a href="index.html">Home page</a></li>
+      <li><a href="#" style="color:rgb(3, 255, 255);">Admission</a></li>
+      <li><a href="result.html">Result</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Home</a></li>
+    </ul>
+  </section>
+        <h2>Admission Form</h2>
+        <form action="script/resistation.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Full Name"><br>
+            <label for="bod">Birth of date:</label>
+            <input type="date" id="dob" name="dob"><br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"></textarea><br>
+            <label for="parent-name">Parent's Name:</label>
+            <input type="text" id="parent-name" name="parent-name"><br>
+            <label for="parent-email">Parent's Number:</label>
+            <input type="number" placeholder="01xxxxxxxxx" id="number" name="number"><br><br>
+            <input type="submit" value="Submit">
+          </form>
+          
+
+  </body>
+</html>
